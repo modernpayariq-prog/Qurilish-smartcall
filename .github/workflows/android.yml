@@ -13,11 +13,12 @@ jobs:
     steps:
       - name: Get source
         uses: actions/checkout@v4      
-      - name: Extract Android project
+       - name: Extract Android project
           run: |
             mkdir -p /tmp/smartcall
             unzip -o qurilish-smartcall-starter.zip -d /tmp/smartcall
-            cp /tmp/smartcall/settings.gradle /tmp/smartcall/build.gradle /tmp/smartcall/gradle.properties .
+            cp /tmp/smartcall/settings.gradle .
+            cp /tmp/smartcall/build.gradle .
             cp -r /tmp/smartcall/app .
 
       - name: Setup Java
